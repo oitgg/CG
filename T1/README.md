@@ -1,6 +1,8 @@
 # T1: Rasterização de Pontos e Linhas
 
-### Grupo: Lucas Rincon, Thiago Henrique e Thiago Gonzaga
+## `Grupo: Lucas Rincon, Thiago Henrique e Thiago Gonzaga`
+
+
 
 Este post constitui o relatório sobre o primeiro trabalho da disciplina de Introdução à Computação Gráfica, ministrada pelo Prof. Dr. Christian Pagot, no período 2017.2.
 
