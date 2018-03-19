@@ -28,7 +28,7 @@ Levando em consideração que a o número de pixels na tela é dado pela multipl
 Para isso foi-nos apresentado tal algoritmo, que decide a posição de cada pixel e cada canal de um pixel na memória, considerando largura em pixels da tela:
 
 ![pixel](https://github.com/oitgg/href/blob/master/imgCG/2.png)
-Onde w é a largura em pixels da tela.
+> Onde w é a largura em pixels da tela.
 
 Para alocar o framebuffer e inicializar suas posições com 0, implementou-se a função InitDataStructures():
 
@@ -63,7 +63,7 @@ PutPixel(189,512,cor2);
 PutPixel(133,37,cor1);
 ```
 Obtém-se:
-![exemplopixel](https://github.com/oitgg/href/blob/master/imgCG/exemplopixels.png)
+> ![exemplopixel](https://github.com/oitgg/href/blob/master/imgCG/exemplopixels.png)
  
 
 ### Rasterização de Retas
@@ -134,7 +134,7 @@ Caso compile-se:
 DrawLine(180,180,380,380,cor0,cor0);
 ```
 Obtém-se:
-![reta](https://github.com/oitgg/href/blob/master/imgCG/exemploreta.png)
+> ![reta](https://github.com/oitgg/href/blob/master/imgCG/exemploreta.png)
 
 
 ### Interpolação Linear
@@ -186,8 +186,7 @@ DrawLine(238, 493, 177, 176,cor0,cor2);
 DrawLine(507, 374, 93, 433,cor2,cor0);
 ```
 Obtém-se as seguintes retas:
-
-![interpolação](https://github.com/oitgg/href/blob/master/imgCG/exemplointerp.png)
+> ![interpolação](https://github.com/oitgg/href/blob/master/imgCG/exemplointerp.png)
 
 
 ### Rasterização de Triângulos
@@ -210,7 +209,7 @@ DrawTriangle(106, 406, 256, 106, 406, 406, cor0, cor1, cor2);
 DrawTriangle(83, 256, 512, 83, 256, 512, cor1, cor2, cor0);
 ```
 Obtém-se:
-![triangulos](https://github.com/oitgg/href/blob/master/imgCG/exemplotriang.png)
+> ![triangulos](https://github.com/oitgg/href/blob/master/imgCG/exemplotriang.png)
 
 
 Estes algoritimos são realmente eficazes para rasterização e interpolação de retas e triângulos, assim como os testes comprovam, e ainda é possível realizar diversas outras aplicações com estes algorítmos para criar formas diferentes (como o círculo rasterizado com linhas), com auxílio de funções matemáticas.
