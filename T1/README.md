@@ -20,56 +20,56 @@ O nossa malha de tela é constitui um espaço bidimensional, porém a memória �
 
 Para tanto, foi apresentado um algoritmo em sala de aula que efetua tal alocamento, como pode ser exemplificado na imagem apresentada:
 
-==== imagem1
+![display](https://github.com/oitgg/href/blob/master/imgCG/1.png)
 
 Levando em consideração que a o número de pixels na tela é dado pela multiplicação de número de linhas * número de colunas, a memória deve ter esta mesma quantidade de posições para representar a tela, só que de forma linear.
 
 Para isso foi-nos apresentado tal algoritmo, que decide a posição de cada pixel e cada canal de um pixel na memória, considerando largura em pixels da tela:
 
-==== imagem2
+![pixel](https://github.com/oitgg/href/blob/master/imgCG/2.png)
 Onde w é a largura em pixels da tela.
 
 Para alocar o framebuffer e inicializar suas posições com 0, implementou-se a função InitDataStructures():
 
 ```sh
-	FBptr = new unsigned char[IMAGE_WIDTH * IMAGE_HEIGHT * 5];
-	for (unsigned int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT ; i++)
-	{
-		FBptr[i*4]   = 0;
-		FBptr[i*4+1] = 0;
-		FBptr[i*4+2] = 0;
-		FBptr[i*4+3] = 255;
-	}
+FBptr = new unsigned char[IMAGE_WIDTH * IMAGE_HEIGHT * 5];
+for (unsigned int i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT ; i++)
+{
+	FBptr[i*4]   = 0;
+	FBptr[i*4+1] = 0;
+	FBptr[i*4+2] = 0;
+	FBptr[i*4+3] = 255;
+}
 ```
 
 E para desenhar cada um dos 4 canais de cor do ponto desejado, segui-se a seguinte lógica:
 
 ```sh
-    FBptr[4*y*IMAGE_WIDTH + 4*x]      = rgba[0];
-    FBptr[4*y*IMAGE_WIDTH + 4*x +1]   = rgba[1];
-    FBptr[4*y*IMAGE_WIDTH + 4*x +2]   = rgba[2];
-    FBptr[4*y*IMAGE_WIDTH + 4*x +3]   = rgba[3];
+FBptr[4*y*IMAGE_WIDTH + 4*x]      = rgba[0];
+FBptr[4*y*IMAGE_WIDTH + 4*x +1]   = rgba[1];
+FBptr[4*y*IMAGE_WIDTH + 4*x +2]   = rgba[2];
+FBptr[4*y*IMAGE_WIDTH + 4*x +3]   = rgba[3];
  ```
  
  Por exemplo, se compilar-se:
 ```sh
-    PutPixel(256,106,cor0);
-    PutPixel(356,206,cor1);
-    PutPixel(133,306,cor2);
-    PutPixel(156,432,cor1);
-    PutPixel(73,233,cor0);
-    PutPixel(189,512,cor2);
-    PutPixel(133,37,cor1);
+PutPixel(256,106,cor0);
+PutPixel(356,206,cor1);
+PutPixel(133,306,cor2);
+PutPixel(156,432,cor1);
+PutPixel(73,233,cor0);
+PutPixel(189,512,cor2);
+PutPixel(133,37,cor1);
 ```
 Obtém-se:
-===imgpixel
+![exemplopixel](https://github.com/oitgg/href/blob/master/imgCG/exemplopixels.png)
  
 
 ### Rasterização de Retas
 
 A rasterização de uma reta é a discretização de um modelo matemático para uma matriz bidimensional. 
 
-==== imagem3
+![matriz](https://github.com/oitgg/href/blob/master/imgCG/3.png)
 
 Basicamente, é a representação de uma reta, formada por dois vértices, na tela do computador. Como trata-se de um processo altamente custoso por utilizar muitos floats e multiplicações, temos de utilizar um algoritmo com abordagem aproximativa, como por exemplo, o algoritmo de Bresenham.
 
@@ -93,34 +93,35 @@ a = Δy, b = Δx, c = Δx*c
 
 Utilizando uma das exemplificações dadas em aula, sabemos que pintaremos os pixels da esquerda para a direita, então o próximo pixel a ser pintado pode ser (x+1,y) ou (x+1,y+1). Para decidir, é calculado um “erro de aproximação” aplicando a equação do plano no ponto médio entre os pixels que podem ser escolhidos:
 
-====imagem4
+![pos](https://github.com/oitgg/href/blob/master/imgCG/4.png)
 
 Se a equação retornar um valor positivo, isso significa dizer que a reta passa por baixo do ponto, ou seja, está mais próxima do ponto (x+1,y), portanto este deve ser pintado. Caso o valor seja negativo, significa o contrário, e que o pixel a ser pintado é o (x+1,y+1).
 
 O algorítmo utilizado para o cálculo das posições x e y do ponto em relação à referência de orientação, e da aproximação e correção do erro em relação ao eixo de orientação é o seguinte:
 ```sh
-   if(dx > dy) {
-   x += pX;
-   p += dy;
+if(dx > dy) {
+x += pX;
+p += dy;
 
-   if(p >= dx) 
-   {
-   y += pY;
-   p -= dx;
-   }
-               } 
-   else {
-   y += pY;
-   p += dx;
+if(p >= dx) 
+{
+y += pY;
+p -= dx;
+}
+            } 
+else {
+y += pY;
+p += dx;
 
-   if(p >= dy) 
-   {
-   x += pX;
-   p -= dy;
-   }
+if(p >= dy) 
+{
+x += pX;
+p -= dy;
+}
+     }
 ```
 
-===imagemoctantes
+![octantes](https://github.com/oitgg/href/blob/master/imgCG/exemplooctantes.png)
 
 Com isso, uma função para o desenho das linhas, que recebe as posições iniciais e finais dos dois pontos, juntamente com sua cor (interpolada ou não) foi implementada: 
 ```sh
@@ -132,7 +133,7 @@ Caso compile-se:
 DrawLine(180,180,380,380,cor0,cor0);
 ```
 Obtém-se:
-====imgexemplolinha
+![reta](https://github.com/oitgg/href/blob/master/imgCG/exemploreta.png)
 
 
 ### Interpolação Linear
@@ -185,7 +186,7 @@ DrawLine(507, 374, 93, 433,cor2,cor0);
 ```
 Obtém-se as seguintes retas:
 
-====imgexemplointerpolação
+![interpolação](https://github.com/oitgg/href/blob/master/imgCG/exemplointerp.png)
 
 
 ### Rasterização de Triângulos
@@ -195,11 +196,11 @@ Após a parte mais trabalhosa em termos de implementação, foi desenvolvida a f
 ```sh
 void DrawTriangle(int xa, int ya, int xb, int yb, int xc, int yc,
                   int rgbaP0[], int rgbaP1[], int rgbaP2[]) 
-    {
-    DrawLine(xa, ya, xb, yb, rgbaP0, rgbaP1);
-    DrawLine(xb, yb, xc, yc, rgbaP1, rgbaP2);
-    DrawLine(xc, yc, xa, ya, rgbaP2, rgbaP0);
-    }
+{
+DrawLine(xa, ya, xb, yb, rgbaP0, rgbaP1);
+DrawLine(xb, yb, xc, yc, rgbaP1, rgbaP2);
+DrawLine(xc, yc, xa, ya, rgbaP2, rgbaP0);
+}
 ```
 
 Compilando o seguinte exemplo:
@@ -208,7 +209,7 @@ DrawTriangle(106, 406, 256, 106, 406, 406, cor0, cor1, cor2);
 DrawTriangle(83, 256, 512, 83, 256, 512, cor1, cor2, cor0);
 ```
 Obtém-se:
-====imgexemplotriang
+![triangulos](https://github.com/oitgg/href/blob/master/imgCG/exemplotriang.png)
 
 
 Estes algoritimos são realmente eficazes para rasterização e interpolação de retas e triângulos, assim como os testes comprovam, e ainda é possível realizar diversas outras aplicações com estes algorítmos para criar formas diferentes (como o círculo rasterizado com linhas), com auxílio de funções matemáticas.
@@ -222,6 +223,6 @@ Foi realizado também, a tentativa de implementação do preenchimento por compl
 ## Referências Bibliográficas
 
 • Notas de Aula do Prof. Christian
-• https://bitunico.wordpress.com/2012/12/16/rasterizacao-em-cc-algoritmo-de-bresenham/
-• https://www.cs.helsinki.fi/group/goa/mallinnus/lines/bresenh.html
-• https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm
+• [Rasterização em C/C++ (Algorítmo de Bresenham)](https://bitunico.wordpress.com/2012/12/16/rasterizacao-em-cc-algoritmo-de-bresenham/)
+• [The Bresenham Line-Drawing Algorithm](https://www.cs.helsinki.fi/group/goa/mallinnus/lines/bresenh.html)
+• [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
