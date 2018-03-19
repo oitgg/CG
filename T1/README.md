@@ -1,5 +1,5 @@
 # T1: Rasterização de Pontos e Linhas
-## `Grupo: Lucas Rincon, Thiago Henrique e Thiago Gonzaga`
+### `Grupo: Lucas Rincon, Thiago Henrique e Thiago Gonzaga`
 
 
 
