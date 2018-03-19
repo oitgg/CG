@@ -222,7 +222,7 @@ Foi realizado também, a tentativa de implementação do preenchimento por compl
 
 ## Referências Bibliográficas
 
-• Notas de Aula do Prof. Christian
-• [Rasterização em C/C++ (Algorítmo de Bresenham)](https://bitunico.wordpress.com/2012/12/16/rasterizacao-em-cc-algoritmo-de-bresenham/)
-• [The Bresenham Line-Drawing Algorithm](https://www.cs.helsinki.fi/group/goa/mallinnus/lines/bresenh.html)
-• [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
+- Notas de Aula do Prof. Christian
+- [Rasterização em C/C++ (Algorítmo de Bresenham)](https://bitunico.wordpress.com/2012/12/16/rasterizacao-em-cc-algoritmo-de-bresenham/)
+- [The Bresenham Line-Drawing Algorithm](https://www.cs.helsinki.fi/group/goa/mallinnus/lines/bresenh.html)
+- [Bresenham's line algorithm](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
