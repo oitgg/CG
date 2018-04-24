@@ -5,7 +5,7 @@ Esta é uma réplica da engine do jogo Portal escrito em OpenGL.
 
 ## Dependencias
 
-* Opengl, Glut FreeImage e CMake são as principais dependências necessárias para buildar esse projeto;
+* Opengl, Glut, FreeImage e CMake são as principais dependências necessárias para buildar esse projeto;
 * Todas as dependências são facilmente instaladas a partir do package manager do seu OS;
 * Para facilitar, recomenda-se executar o seguinte comando no seu terminal:
 ```
