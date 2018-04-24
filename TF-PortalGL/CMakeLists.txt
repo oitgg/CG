@@ -13,5 +13,5 @@ find_package(GLUT REQUIRED)
 
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} ./include ./CML)
 
-target_link_libraries(open_portal ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} -lfreeimage)
+target_link_libraries(portalgl ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} -lfreeimage)
 
