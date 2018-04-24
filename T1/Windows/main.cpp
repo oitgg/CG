@@ -38,7 +38,7 @@ void MyGlDraw(void)
     ===============================
     */
 
-    DrawLine(120,60,120,320,cor0,cor1);
+    //DrawLine(120,60,120,320,cor0,cor1);
     //DrawLine(306, 206, 256, 106,cor2,cor0);
 
 //LEMBRAR DE DESCOMENTAR A FUNÇÃO DESEJADA E COMENTAR AS OUTRAS DUAS//
@@ -50,10 +50,9 @@ void MyGlDraw(void)
     ===============================
     */
 
-    /*DrawTriangle(106, 406, 256, 106, 406, 406, cor0, cor1, cor2);
+    DrawTriangle(106, 406, 256, 106, 406, 406, cor0, cor1, cor2);
     DrawTriangle(83, 256, 512, 83, 256, 512, cor1, cor2, cor0);
-    DrawTriangle(256, 383, 77, 256, 383, 256, cor2, cor0, cor1);*/
-
+    
 }
 
 //-----------------------------------------------------------------------------
