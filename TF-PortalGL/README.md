@@ -48,4 +48,4 @@ Caso isso aconteça, faça o seguinte:
 * Vá novamente até o arquivo `CMakeLists.txt`, adicione a flag novamente, e refaça o `make`.
 
 Caso o `make` seja completo com sucesso, o executável será criado no diretório `build`.
-Para executar o jogo, apenas entre com o comando ./portalgl (Em algumas máquinas, é possível a execução do mesmo a partir do ícone do executável, no diretório).
+Para executar o jogo, apenas entre com o comando `./portalgl` (Em algumas máquinas, é possível a execução do mesmo a partir do ícone do executável, no diretório).
