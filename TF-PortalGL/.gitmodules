@@ -1,0 +1,3 @@
+[submodule "CMLib"]
+	path = CMLib
+	url = https://github.com/oitgg/CML
