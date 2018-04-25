@@ -28,7 +28,8 @@ mkdir build
 cd build
 ```
 
-Como algumas operações são dependentes do GCC, é necessário o set da flag do padrão C++11, para isto, no diretório raíz do projeto, procure o arquivo chamado `CMakeLists.txt` e abra-o com o editor de texto de sua escolha
+Como algumas operações são dependentes do GCC, é necessário o set da flag do padrão C++11, para isto, no diretório raíz do projeto, procure o arquivo chamado `CMakeLists.txt` e abra-o com o editor de texto de sua escolha.
+
 Na segunda linha, abaixo de `cmake_minimum_required(VERSION 2.8)`, insira a seguinte flag:
 ```
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
