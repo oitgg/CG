@@ -1,3 +1,3 @@
 [submodule "PortalGL/CML"]
 	path = PortalGL/CML
-	url = git@github.com:oitgg/CML.git
+	url = https://github.com/oitgg/CML.git
