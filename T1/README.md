@@ -13,7 +13,7 @@ Os Monitores (displays) atuais são compostos por uma malha de pixels, com x pix
 
 Para representar tais cores em um computador, geralmente são utilizados 8 bits para cada componente (canal) do pixel, dando 256 níveis de intensidade para cada cor. Combinando os 3 canais é possível representar aproximadamente 16 milhões de cores com um computador. Adicionalmente, existe um canal A (alpha), referente à transparência do pixel. Neste trabalho utilizaremos o espaço RGBA.
 
-Vimos que pixels são compostos por 4 canais, cada um com 8 bits de memória (utilizaremos unsigned char para representar um canal), totalizando 32 bits de informação cada pixel. Para "pintar" os píxels na tela, escreveremos na memória de vídeo os valores de cada pixel. Entretanto, nos computadores modernos, o acesso à memória de vídeo é restrito, e não é possível alterá-los facilmente. Por isso foi concedido o Framework para tal trabalho. Nele existe o ponteiro FBptr (Frame Buffer Pointer), que aponta para a posição em memória referente ao pixel (0,0) na tela.
+Vimos que pixels são compostos por 4 canais, cada um com 8 bits de memória (utilizaremos unsigned char para representar um canal), totalizando 32 bits de informação cada pixel. Para "pintar" os píxels na tela, escreveremos na memória de vídeo os valores de cada pixel. Entretanto, nos computadores modernos, o acesso à memória de vídeo é restrito, e não é possível alterá-los facilmente. Por isso foi concedido o Framework para tal trabalho. Nele existe o ponteiro FBPtr (Frame Buffer Pointer), que aponta para a posição em memória referente ao pixel (0,0) na tela.
 
 ### Armazenamento de píxels
 
