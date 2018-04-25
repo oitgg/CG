@@ -1,3 +1,6 @@
 [submodule "CML"]
 	path = CML
 	url = git@github.com:oitgg/CML.git
+[submodule "CML-Lib"]
+	path = CML-Lib
+	url = git@github.com:oitgg/CML.git
