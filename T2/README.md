@@ -76,6 +76,7 @@ O shear já é uma transformação mais complicada, que não será explorada a f
 Exemplo de matriz de shear 3D:
 
 ![matrizs](https://github.com/oitgg/href/blob/master/imgCGT2/12.png)
+
 Onde mx e my são shears em **X** e **Y**, respectivamente, ao longo do eixo **Z**.
 
 # Matriz Model
