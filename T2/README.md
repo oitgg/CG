@@ -17,11 +17,7 @@ Então neste relatório tentarei resumir os processos contidos no Pipeline Gráf
 
 Todo objeto (em computação gráfica), seja ele bidimensional ou tridimensional, possui um eixo de coordenadas que mostra onde é a origem do objeto e como ele está orientado. Para este trabalho utilizaremos objetos 3d, ou seja, para descrever nossos objetos precisamos utilizar uma base ortonormal X, Y, Z.
 
-Tomará-se como exemplo um .obj de uma espada:
-![espada](https://github.com/oitgg/href/blob/master/imgCGT2/2.png)
-Temos então o eixo X, o eixo Y e o eixo Z.
-
-Então, para posicionar objetos no universo, é necessário realizar transformações pois nem sempre queremos o objeto na origem do universo, que é o que aconteceria caso este não sofresse transformações e tiver sido modelado na origem.
+Temos então o eixo X, o eixo Y e o eixo Z. Então, para posicionar objetos no universo, é necessário realizar transformações pois nem sempre queremos o objeto na origem do universo, que é o que aconteceria caso este não sofresse transformações e tiver sido modelado na origem.
 
 Pode-se aplicar a um objeto transformações de **Escala**, **Rotação**, **Translação** e ***Shear***. Para isso utilizamos matrizes de transformação, pois estas facilitam a implementação, além de possibilitar realizar todas as transformações com apenas uma matriz (todas as matrizes de transformação podem ser multiplicadas para gerar uma única matriz de transformação do espaço do objeto para o espaço de tela, por exemplo).
 
@@ -34,7 +30,8 @@ _Exemplos_:
 ### Escala Anisotrópica:
 ![anisotropica](https://github.com/oitgg/href/blob/master/imgCGT2/4.png)
 
-A matrix de Escala é dada deste modo:
+A matriz de Escala é dada deste modo:
+
 ![matriz](https://github.com/oitgg/href/blob/master/imgCGT2/5.png)
 
 Onde sx é a escala no eixo **X**, sy é a escala no eixo **Y** e sz é a escala no eixo **Z**.
@@ -42,6 +39,7 @@ Onde sx é a escala no eixo **X**, sy é a escala no eixo **Y** e sz é a escala
 Notemos que para representar uma transformação tridimensional é necessário usar uma matriz 4x4. Isso ocorre devido a impossibilidade de representar translações num espaço tridimensional com matrizes. Para isso é necessário aumentar o grau do espaço em um, realizando as transformações em um espaço chamado de Homogêneo. Para ir para o espaço homogêneo a partir de uma matriz 3x3 (tridimensional) basta aumentar uma linha e uma coluna, adicionando uma coordenada Homogênea W = 1 na posição (4,4) da matriz gerada.
 
 Os novos pontos transformados do objeto são obtidos multiplicando a matriz de transformação pelo vetor com as coordenadas do ponto:
+
 ![matriz](https://github.com/oitgg/href/blob/master/imgCGT2/6.png)
 
 # Rotação
@@ -65,15 +63,18 @@ Para se obter o vetor resultante da transformação basta fazer o mesmo feito co
 # Translação
 A matriz de translação vai simplesmente transladar os pontos que forem transformados pela matriz:
 ![matrizt](https://github.com/oitgg/href/blob/master/imgCGT2/10.png)
+
 Onde dx é o deslocamento (translação) no eixo **X**, dy é o deslocamento em **Y** e dz é o deslocamento em **Z**.
 
 # *Shear*
 O shear já é uma transformação mais complicada, que não será explorada a fundo aqui, uma vez que este trabalho não implementou matriz de shear. Mas resumidamente o shear é uma transformação que distorce mais ou menos um ponto de acordo com a distância dele da origem: quanto mais longe da origem um ponto está, mais distorção ele terá, e vice-versa.
 
 É possível tomar como exemplo um shear em 2D:
+
 ![shear](https://github.com/oitgg/href/blob/master/imgCGT2/11.png)
 
 Exemplo de matriz de shear 3D:
+
 ![matrizs](https://github.com/oitgg/href/blob/master/imgCGT2/12.png)
 Onde mx e my são shears em **X** e **Y**, respectivamente, ao longo do eixo **Z**.
 
@@ -108,6 +109,7 @@ Na transformação do Espaço do Universo para o espaço da câmera os pontos se
 A Matriz *View* pode ser facilmente montada com os parâmetros da câmera: a posição da câmera; o vetor *LookAt* (aponta para onde a câmera está olhando); e o vetor *Up* (aponta para cima, para impedir que a câmera realize movimentos laterais, “cair para os lados”).
 
 Primeiro é montada a base da camêra com esses parâmetros:
+
 ![basecam](https://github.com/oitgg/href/blob/master/imgCGT2/14.png)
 
 Para fazer a transformação da base do espaço do Universo para a Base do espaço da Câmera, de acordo com estudos em álgebra linear, basta multiplicar a os pontos na base inicial pela inversa da base final. E como a base da câmera é ortonormal, sua inversa é sua transposta. É possível montar então:
@@ -115,6 +117,7 @@ Para fazer a transformação da base do espaço do Universo para a Base do espa�
 ![baset](https://github.com/oitgg/href/blob/master/imgCGT2/15.png)
 
 E aplicamos a translação da câmera:
+
 ![trans](https://github.com/oitgg/href/blob/master/imgCGT2/16.png)
 
 Logo,
@@ -130,6 +133,7 @@ Resumidamente, para criar distorção de perspectiva colocamos um *View Plane* a
 ![viewplane](https://github.com/oitgg/href/blob/master/imgCGT2/17.png)
 
 A Matriz *Projection*, junto com o deslocamento do centro de projeção tem esse molde:
+
 ![matrizp](https://github.com/oitgg/href/blob/master/imgCGT2/18.png)
 
 # Espaço de Recorte ⇒ Espaço Canônico
