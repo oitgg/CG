@@ -1,1 +1,1 @@
-Para compilar, ```sh make all```
+Para compilar, ```$ make all```
