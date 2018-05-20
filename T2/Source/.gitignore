@@ -1,0 +1,10 @@
+*.[ao]
+*.tmp
+*.log
+*~
+.settings/
+.project
+.cproject
+cgprog
+/Debug/
+/Release/
