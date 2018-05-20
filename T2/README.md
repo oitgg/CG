@@ -1,7 +1,7 @@
 # T2: Implementação do Pipeline Gráfico
 ### `Grupo: Lucas Rincon, Thiago Henrique e Thiago Gonzaga`
 
-Este post constitui o relatório sobre o segundo trabalho da disciplina de Introdução à Computação Gráfica, ministrada pelo Prof. Christian Pagot, no período 2017.2.
+Este post constitui o relatório sobre o segundo trabalho da disciplina de Introdução à Computação Gráfica, ministrada pelo Prof. Dr. Christian Pagot, no período 2017.2.
 
 O trabalho consiste em implementar as transformações de um objeto tridimensional no pipeline gráfico, desde o espaço deste (do objeto) até o espaço de tela. O projeto deve ser implementado em liguagem C/C++ juntamente com as bibliotecas GLUT e OpenGL.
 
