@@ -27,13 +27,13 @@ Weapon::Weapon(EntityList *entList)
             glBindTexture(GL_TEXTURE_2D, texgun5);
             glEnable (GL_BLEND);
                 glBegin(GL_QUADS);
-                    glTexCoord2f(0.0, 0.0);
+                    glTexCoord2f(0.01, 0.0);
                     glVertex3f(gun5[0], gun5[1], gun5[2]);
-                    glTexCoord2f(1.0, 0.0);
+                    glTexCoord2f(0.99, 0.0);
                     glVertex3f(gun5[3], gun5[4], gun5[5]);
-                    glTexCoord2f(1.0, 1.0);
+                    glTexCoord2f(0.99, 1.0);
                     glVertex3f(gun5[6], gun5[7], gun5[8]);
-                    glTexCoord2f(0.0, 1.0);
+                    glTexCoord2f(0.01, 1.0);
                     glVertex3f(gun5[9], gun5[10], gun5[11]);
                 glEnd();
             glDisable(GL_BLEND);
